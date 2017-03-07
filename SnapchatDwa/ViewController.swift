@@ -10,8 +10,8 @@ import UIKit
 //przy mapach potrzebujemy zaimportować mapkit
 import MapKit
 
-//dodajemy CLLOcation<enagerDelegate
-class ViewController: UIViewController, CLLocationManagerDelegate {
+//dodajemy CLLOcation<enagerDelegate i MKMapViewDelegate
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     //manager potrzebny
@@ -33,7 +33,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         //aby aplikacja nie pytała za każdym razem o autoryzacje sprawdzamy czy jest juz autoryzowany dostep do gps przy uzyciu
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            print("mamy juz zgode")
+            mapView.delegate = self
+            
+            
             //aby pokazała się kropka pokazująca aktualną pozycje na mapie
             mapView.showsUserLocation = true
             //
@@ -61,6 +63,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         }
     }
+    //dzieki tej funkcji zamiast szpilek możemy wyświetlić obrazek, będzie ona wykonana za kazdym razem gdy będzie pojawiać się annotacja ( szpilka)
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        // jeśli annotacja to jest kropka użytkownika to zwracamy player jako nazwe obrazka dla pozycji użytkonika
+        if annotation is MKUserLocation {
+            
+            let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            
+            annoView.image = UIImage(named: "player")
+            
+            //ustalamy wielkość obrazku ktory pojawi się zamiast szpilki
+            var frame = annoView.frame
+            frame.size.height = 50
+            frame.size.width = 50
+            
+            //i przypisujemy znowu ustalony frame do annoView
+            annoView.frame = frame
+            
+            return annoView
+
+        } else {
+            
+        let annoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        
+        annoView.image = UIImage(named: "mew")
+        
+        //ustalamy wielkość obrazku ktory pojawi się zamiast szpilki
+        var frame = annoView.frame
+        frame.size.height = 50
+        frame.size.width = 50
+        
+        //i przypisujemy znowu ustalony frame do annoView
+        annoView.frame = frame
+        
+        return annoView
+    }
+    }
         //ta funkcja będzie wykonywana gdy rozpoznany zostanie ruch
        func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]){
         
@@ -71,11 +110,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             //aby zaoszczędzić baterię i procesor wyłączamy update lokalizacji, ale mimo to dalej na mapie będzie widoczny ruch i gdzie się znajdujemy
             manager.stopUpdatingLocation()
-            
-            
-        }
         
         }
+    }
+
         //przycisk kompasu, który ma centrować widok na kropce lokalizacji
     @IBAction func centerTapped(_ sender: Any) {
         
@@ -83,12 +121,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 400, 400)
         mapView.setRegion(region, animated: true)
         }
-    }
-        
     
-
+    }
     
 
 
 }
-

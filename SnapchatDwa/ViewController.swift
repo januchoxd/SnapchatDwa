@@ -33,6 +33,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             mapView.showsUserLocation = true
             //
             manager.startUpdatingLocation()
+            
+            //odpalamy timer
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+                //tutaj jest ten kod który ma się wykonać w wyżej określonym interwale sekund ( ttutaj zrobimy spawn a pokemon) - pokemony będziemy pokazywać ako annotacje ( szpilki)
+                if let coord = self.manager.location?.coordinate {
+                let anno = MKPointAnnotation()
+                anno.coordinate = coord
+                //tworzymy losowe zmienne 
+                let randoLat = (Double(arc4random_uniform(200)) - 100.0) / 50000.0
+                let randoLon = (Double(arc4random_uniform(200)) - 100.0) / 50000.0
+                    
+                anno.coordinate.latitude += randoLat
+                anno.coordinate.longitude += randoLon
+                self.mapView.addAnnotation(anno)
+                }
+            })
 
         } else {
         //autoryzacja tylko będzie gdy aplikacja bedzie w uzyciu ( nie jak np. google maps w tle)

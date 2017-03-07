@@ -34,3 +34,37 @@ func createPokemon(name: String, imageName: String){
     pokemon.name = name
     pokemon.imageName = imageName
 }
+
+//
+func getAllPokemon() -> [Pokemon] {
+    //potrzebne
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+   
+    do {
+        let pokemons = try context.fetch(Pokemon.fetchRequest()) as! [Pokemon]
+        
+        //sprawdzamy czy przypadkiem tablica pokemonow nie jest pusta
+        if pokemons.count == 0 {
+            //dodajemy wszystkie pokemony
+            addAllPokemon()
+            //w przypadku gdy nie było pokemonow, wykonamy funkcje getAllPokemon od nowa
+            return getAllPokemon()
+        }
+        return pokemons
+    } catch {}
+    
+    //w przypadku draki zwracamy pusta tablice
+    return []
+}
+
+// funkcja która zapoda wszystkie złapane pokemony
+func getAllCaughtPokemons() -> [Pokemon] {
+    
+    return []
+}
+//funkcja która zapoda wszystkie niezłapane pokemony
+func ungetAllUnCaughtPokemons() -> [Pokemon] {
+    
+    return []
+}
+

@@ -19,10 +19,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //aby po 3 pobraniach pozycji, mapa sama się nie centrowała na lokalizacji
     var updateCount = 0
     
+    //tablica do pokemonów
+    var pokemons : [Pokemon] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //za pomocą funkcji z CoreDataHelp wypełniamy tablice pokemons pokemonami
+        pokemons = getAllPokemon()
         
         manager.delegate = self
         

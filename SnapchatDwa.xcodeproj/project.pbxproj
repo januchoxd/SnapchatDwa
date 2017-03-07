@@ -13,6 +13,7 @@
 		24EBDE7B1E6F4C5A00FF57D3 /* SnapchatDwa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24EBDE791E6F4C5A00FF57D3 /* SnapchatDwa.xcdatamodeld */; };
 		24EBDE7D1E6F4C5A00FF57D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EBDE7C1E6F4C5A00FF57D3 /* Assets.xcassets */; };
 		24EBDE801E6F4C5A00FF57D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EBDE7E1E6F4C5A00FF57D3 /* LaunchScreen.storyboard */; };
+		24EBDE891E6F4D5300FF57D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EBDE881E6F4D5300FF57D3 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		24EBDE7C1E6F4C5A00FF57D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24EBDE7F1E6F4C5A00FF57D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24EBDE811E6F4C5A00FF57D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24EBDE881E6F4D5300FF57D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24EBDE891E6F4D5300FF57D3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				24EBDE711E6F4C5A00FF57D3 /* SnapchatDwa */,
 				24EBDE701E6F4C5A00FF57D3 /* Products */,
+				24EBDE871E6F4D5300FF57D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +69,14 @@
 				24EBDE791E6F4C5A00FF57D3 /* SnapchatDwa.xcdatamodeld */,
 			);
 			path = SnapchatDwa;
+			sourceTree = "<group>";
+		};
+		24EBDE871E6F4D5300FF57D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24EBDE881E6F4D5300FF57D3 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

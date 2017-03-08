@@ -43,7 +43,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="pokeball"/>
                                         <connections>
-                                            <segue destination="Bdo-ED-gKd" kind="presentation" id="cqn-ad-ZKS"/>
+                                            <segue destination="Bdo-ED-gKd" kind="presentation" identifier="pokedexSegue" id="cqn-ad-ZKS"/>
                                         </connections>
                                     </button>
                                 </subviews>

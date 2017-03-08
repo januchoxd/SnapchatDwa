@@ -16,6 +16,7 @@
 		24EBDE891E6F4D5300FF57D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EBDE881E6F4D5300FF57D3 /* MapKit.framework */; };
 		24EBDE8B1E6F5B1000FF57D3 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBDE8A1E6F5B1000FF57D3 /* PokedexViewController.swift */; };
 		24EBDE8D1E6F5C9A00FF57D3 /* CoreDataHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBDE8C1E6F5C9A00FF57D3 /* CoreDataHelp.swift */; };
+		24EBDE8F1E6F71AC00FF57D3 /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBDE8E1E6F71AC00FF57D3 /* PokeAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		24EBDE881E6F4D5300FF57D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		24EBDE8A1E6F5B1000FF57D3 /* PokedexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
 		24EBDE8C1E6F5C9A00FF57D3 /* CoreDataHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelp.swift; sourceTree = "<group>"; };
+		24EBDE8E1E6F71AC00FF57D3 /* PokeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				24EBDE741E6F4C5A00FF57D3 /* ViewController.swift */,
 				24EBDE8A1E6F5B1000FF57D3 /* PokedexViewController.swift */,
 				24EBDE8C1E6F5C9A00FF57D3 /* CoreDataHelp.swift */,
+				24EBDE8E1E6F71AC00FF57D3 /* PokeAnnotation.swift */,
 				24EBDE761E6F4C5A00FF57D3 /* Main.storyboard */,
 				24EBDE7C1E6F4C5A00FF57D3 /* Assets.xcassets */,
 				24EBDE7E1E6F4C5A00FF57D3 /* LaunchScreen.storyboard */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24EBDE751E6F4C5A00FF57D3 /* ViewController.swift in Sources */,
+				24EBDE8F1E6F71AC00FF57D3 /* PokeAnnotation.swift in Sources */,
 				24EBDE8B1E6F5B1000FF57D3 /* PokedexViewController.swift in Sources */,
 				24EBDE7B1E6F4C5A00FF57D3 /* SnapchatDwa.xcdatamodeld in Sources */,
 				24EBDE8D1E6F5C9A00FF57D3 /* CoreDataHelp.swift in Sources */,
